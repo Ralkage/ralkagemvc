@@ -1,6 +1,9 @@
 <?php
 
-class Pages
+/**
+ * @property mixed $postModel
+ */
+class Pages extends Controller
 {
     public function __construct()
     {
@@ -8,10 +11,15 @@ class Pages
 
     public function index()
     {
+
+        $data = ['title' => 'RalkageMVC'];
+
+        $this->view('pages/index', $data);
     }
 
-    public function about($id)
+    public function about()
     {
-        echo $id;
+        $data = ['title' => 'Abous Us'];
+        $this->view('pages/about', $data);
     }
 }
